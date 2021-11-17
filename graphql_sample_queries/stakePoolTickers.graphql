@@ -1,0 +1,28 @@
+# Gets a list of Pools with their Tickers
+# pmr_id - is the ID from pool_metadata_ref
+
+query Query {
+    pool_offline_data {
+        id
+        pmr_id
+        pool_id
+        ticker_name
+    }
+}
+
+# Return example:
+#    {
+#    "data": {
+#    "pool_offline_data": [
+#    {
+#    "id": 1,
+#    "pmr_id": 239,
+#    "pool_id": 239,
+#    "ticker_name": "OUROS"
+#    },
+#    {
+#    "id": 2,
+#    "pmr_id": 154,
+#    "pool_id": 154,
+#    "ticker_name": "1PCT8"
+#    },

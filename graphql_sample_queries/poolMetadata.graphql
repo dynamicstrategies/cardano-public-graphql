@@ -1,0 +1,30 @@
+# Gets a list of Pools with their Metadata hashes and Urls
+
+query Query {
+    pool_metadata_ref {
+        hash
+        pool_id
+        id
+        registered_tx_id
+        url
+    }
+}
+
+# Sample output:
+#    {
+#    "data": {
+#    "pool_metadata_ref": [
+#    {
+#    "hash": "\\x47c0c68cb57f4a5b4a87bad896fc274678e7aea98e200fa14a1cb40c0cab1d8c",
+#    "pool_id": 2,
+#    "id": 2,
+#    "registered_tx_id": 2482236,
+#    "url": "https://stakenuts.com/mainnet.json"
+#    },
+#    {
+#    "hash": "\\x4e03bf5d4734b9c0857943c94630c43446941d0a505058cb03c7c5deabfb5122",
+#    "pool_id": 4,
+#    "id": 4,
+#    "registered_tx_id": 2482341,
+#    "url": "https://data.pooltool.io/md/6e5dcfbc-7f73-406e-b9ab-78fd7cbed7c5"
+#    },

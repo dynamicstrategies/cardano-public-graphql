@@ -1,0 +1,19 @@
+#Returns the latest block in the chain
+
+query Query {
+    block(limit: 1, order_by: {block_no: desc}, where: {block_no: {_is_null: false}}) {
+        block_no
+    }
+}
+
+#Example output:
+#
+#    {
+#    "data": {
+#    "block": [
+#    {
+#    "block_no": 6401569
+#    }
+#    ]
+#    }
+#    }
