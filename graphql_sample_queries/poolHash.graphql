@@ -1,0 +1,26 @@
+# Gets a list of Pools with their pool_id and their pool hashes that uniquely identifies the pool.
+# You can use this hash to find the pool on adapools.org for example
+
+query Query {
+    pool_hash {
+        id
+        view
+        hash_raw
+    }
+}
+
+# Example output:
+#
+#    {
+#    "data": {
+#    "pool_hash": [
+#    {
+#    "id": 2,
+#    "view": "pool1pu5jlj4q9w9jlxeu370a3c9myx47md5j5m2str0naunn2q3lkdy",
+#    "hash_raw": "\\x0f292fcaa02b8b2f9b3c8f9fd8e0bb21abedb692a6d5058df3ef2735"
+#    },
+#    {
+#    "id": 39,
+#    "view": "pool1qqqz9vlskay2gv3ec5pyck8c2tq9ty7dpfm60x8shvapguhcemt",
+#    "hash_raw": "\\x000022b3f0b748a43239c5024c58f852c05593cd0a77a798f0bb3a14"
+#    },
