@@ -18,6 +18,7 @@ class Client extends Component {
           "    }\n" +
           "}",
       response: "",
+      filesArray: []
     }
 
   }
@@ -37,7 +38,17 @@ class Client extends Component {
 
     }
 
+  }
 
+  loadFileContent = (event) => {
+
+    const filename = event.target.id;
+
+    fetch(`/graphql_sample_queries/${filename}`)
+        .then(r => r.text())
+        .then(text => {
+          this.setState({query: text})
+        })
   }
 
   handleButtonClick = (event) => {
@@ -86,6 +97,7 @@ class Client extends Component {
   componentDidMount(){
 
     this.createClientObj();
+    // this.loadFileContent('chainTip.graphql');
 
   }
 
@@ -93,46 +105,72 @@ class Client extends Component {
     return(
 
         <div style={{padding: "10px", width: "80%", margin: "auto"}}>
+
           <h1 className="bp3-heading">Light GraphQL Client</h1>
-          <ControlGroup fill={true} vertical={false}>
-            <Label htmlFor="url" style={{width:"100%"}}>GraphQL API path</Label>
-            <InputGroup
-                style={{backgroundColor:"#ddf3f3", marginTop: "10px", height: "30px", width:"100%"}}
-                id="url"
-                disabled={false}
-                onChange={this.handleTextChange}
-                value={this.state.url}
-                fill={true}
-            />
-          </ControlGroup>
 
-          <ControlGroup fill={true} vertical={false} style={{paddingTop: "30px"}}>
-            <Label htmlFor="query" style={{width:"400px"}}>Query</Label>
-            <TextArea
-                // growVertically={true}
-                id="query"
-                large={true}
-                style={{backgroundColor:"#e7e7e7", marginTop: "10px", height: "200px", width:"100%"}}
-                onChange={this.handleTextChange}
-                value={this.state.query}
-            />
-          </ControlGroup>
+          <table style={{width: "100%"}}>
+            <tr>
+              <td style={{verticalAlign: "top", width: "250px", lineHeight: "1.5"}}>
+                <h4 className="bp3-heading">Sample Queries</h4>
 
-          <Button
-              text="Run"
-              style={{height: "30px", width: "100px", marginTop: "10px"}}
-              onClick={this.handleButtonClick}
-          />
+                <a href="#" style={{textDecoration: "none"}} id="chainTip.graphql" onClick={this.loadFileContent}>chainTip</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="epochParams.graphql" onClick={this.loadFileContent}>epochParams</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="poolHash.graphql" onClick={this.loadFileContent}>poolHash</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="poolMetadata.graphql" onClick={this.loadFileContent}>poolMetadata</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="stakePoolTickers.graphql" onClick={this.loadFileContent}>stakePoolTickers</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="poolUpdate_allPools.graphql" onClick={this.loadFileContent}>poolUpdate_allPools</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="poolUpdate_onePool.graphql" onClick={this.loadFileContent}>poolUpdate_onePool</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="poolUpdate_oneUpdate.graphql" onClick={this.loadFileContent}>poolUpdate_oneUpdate</a><br/>
 
-          <ControlGroup fill={true} vertical={false} style={{paddingTop: "30px"}}>
-            <Label htmlFor="result" style={{width:"400px"}}>Result</Label>
-            <TextArea
-                growVertically={true}
-                large={true}
-                style={{backgroundColor:"#cfe8c3", marginTop: "10px", height: "400px", width:"100%"}}
-                value={this.state.response}
-            />
-          </ControlGroup>
+              </td>
+              <td>
+
+                <ControlGroup fill={true} vertical={false} style={{paddingTop: "22px"}}>
+                  <Label htmlFor="url" style={{width:"100%"}}>GraphQL API path</Label>
+                  <InputGroup
+                      style={{backgroundColor:"#ddf3f3", marginTop: "10px", height: "30px", width:"100%"}}
+                      id="url"
+                      disabled={false}
+                      onChange={this.handleTextChange}
+                      value={this.state.url}
+                      fill={true}
+                  />
+                </ControlGroup>
+
+                <ControlGroup fill={true} vertical={false} style={{paddingTop: "30px"}}>
+                  <Label htmlFor="query" style={{width:"400px"}}>Query</Label>
+                  <TextArea
+                      // growVertically={true}
+                      id="query"
+                      large={true}
+                      style={{backgroundColor:"#e7e7e7", marginTop: "10px", height: "200px", width:"100%"}}
+                      onChange={this.handleTextChange}
+                      value={this.state.query}
+                  />
+                </ControlGroup>
+
+                <Button
+                    text="Run"
+                    style={{height: "30px", width: "100px", marginTop: "10px"}}
+                    onClick={this.handleButtonClick}
+                />
+
+
+                <ControlGroup fill={true} vertical={false} style={{paddingTop: "30px"}}>
+                  <Label htmlFor="result" style={{width:"400px"}}>Result</Label>
+                  <TextArea
+                      growVertically={true}
+                      large={true}
+                      style={{backgroundColor:"#cfe8c3", marginTop: "10px", height: "400px", width:"100%"}}
+                      value={this.state.response}
+                  />
+                </ControlGroup>
+              </td>
+            </tr>
+          </table>
+
+
+
 
         </div>
 

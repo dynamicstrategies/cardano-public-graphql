@@ -1,0 +1,20 @@
+# You can also limit the query to a specific update id
+# this will return just 1 record
+
+query Query {
+    pool_update(where: {registered_tx_id: {_eq: "10401404"}}) {
+        id
+        margin
+        pledge
+        registered_tx_id
+        reward_addr
+        hash_id
+        fixed_cost
+        active_epoch_no
+        cert_index
+        meta_id
+        vrf_key_hash
+    }
+}
+
+

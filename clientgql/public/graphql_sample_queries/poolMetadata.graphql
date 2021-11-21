@@ -1,0 +1,10 @@
+# Gets a list of Pools with their Metadata hashes and Urls
+query Query {
+    pool_metadata_ref {
+        hash
+        pool_id
+        id
+        registered_tx_id
+        url
+    }
+}

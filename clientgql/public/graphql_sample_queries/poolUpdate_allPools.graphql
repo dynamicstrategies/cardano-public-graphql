@@ -1,0 +1,17 @@
+# Gets a list of updates that were done to all pools
+
+query Query {
+    pool_update {
+        id
+        margin
+        pledge
+        registered_tx_id
+        reward_addr
+        hash_id
+        fixed_cost
+        active_epoch_no
+        cert_index
+        meta_id
+        vrf_key_hash
+    }
+}
