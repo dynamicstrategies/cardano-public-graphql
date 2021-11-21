@@ -1,0 +1,16 @@
+# Returns the Treasury Reserve, total fees for every epoch
+
+query Query {
+    ada_pots {
+        block_id
+        deposits
+        epoch_no
+        fees
+        id
+        reserves
+        rewards
+        slot_no
+        treasury
+        utxo
+    }
+}

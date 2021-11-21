@@ -1,0 +1,23 @@
+# Returns who and when minted the block, the number of transactions and other detail
+# change the block number to something relevant to you
+
+query Query {
+    block(where: {block_no: {_eq: 6529749}}) {
+        block_no
+        slot_no
+        epoch_no
+        epoch_slot_no
+        id
+        hash
+        op_cert
+        op_cert_counter
+        previous_id
+        proto_major
+        proto_minor
+        size
+        slot_leader_id
+        time
+        tx_count
+        vrf_key
+    }
+}

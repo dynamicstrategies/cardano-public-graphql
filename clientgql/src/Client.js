@@ -114,6 +114,7 @@ class Client extends Component {
                 <h4 className="bp3-heading">Sample Queries</h4>
 
                 <a href="#" style={{textDecoration: "none"}} id="chainTip.graphql" onClick={this.loadFileContent}>chainTip</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="epochStats.graphql" onClick={this.loadFileContent}>epochStats</a><br/>
                 <a href="#" style={{textDecoration: "none"}} id="epochParams.graphql" onClick={this.loadFileContent}>epochParams</a><br/>
                 <a href="#" style={{textDecoration: "none"}} id="poolHash.graphql" onClick={this.loadFileContent}>poolHash</a><br/>
                 <a href="#" style={{textDecoration: "none"}} id="poolMetadata.graphql" onClick={this.loadFileContent}>poolMetadata</a><br/>
@@ -121,6 +122,9 @@ class Client extends Component {
                 <a href="#" style={{textDecoration: "none"}} id="poolUpdate_allPools.graphql" onClick={this.loadFileContent}>poolUpdate_allPools</a><br/>
                 <a href="#" style={{textDecoration: "none"}} id="poolUpdate_onePool.graphql" onClick={this.loadFileContent}>poolUpdate_onePool</a><br/>
                 <a href="#" style={{textDecoration: "none"}} id="poolUpdate_oneUpdate.graphql" onClick={this.loadFileContent}>poolUpdate_oneUpdate</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="adaPots.graphql" onClick={this.loadFileContent}>adaPots</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="adaPots_perEpoch.graphql" onClick={this.loadFileContent}>adaPots_perEpoch</a><br/>
+                <a href="#" style={{textDecoration: "none"}} id="blockDetails.graphql" onClick={this.loadFileContent}>blockDetails</a><br/>
 
               </td>
               <td>

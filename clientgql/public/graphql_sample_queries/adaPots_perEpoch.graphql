@@ -1,0 +1,17 @@
+# Returns the Treasury Reserve, total fees for 1 epoch
+# The epoch number 302 can be changed to any other epoch
+
+query Query {
+    ada_pots(where: {epoch_no: {_eq: 302}}) {
+        block_id
+        deposits
+        epoch_no
+        fees
+        id
+        reserves
+        rewards
+        slot_no
+        treasury
+        utxo
+    }
+}

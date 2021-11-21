@@ -1,13 +1,38 @@
-# Retrieve the latest epoch's parameters
-query GetParams {
-    epoch(order_by: {no: desc}, where: {no: {_is_null: false}}, limit: 1) {
-        fees
-        end_time
-        blk_count
-        no
+# Returns blockchain parameters such as the optimal number of pools, pool deposit, treasury growth rate, monetary expansion rate
+# change the query filter on second line to get result for an old epoch. By default returns for most resent epoch
+
+query Query {
+    epoch_param(limit: 1, order_by: {epoch_no: desc}, where: {epoch_no: {_is_null: false}}) {
+        block_id
+        coins_per_utxo_word
+        collateral_percent
+        decentralisation
+        entropy
+        epoch_no
         id
-        start_time
-        tx_count
-        out_sum
+        influence
+        key_deposit
+        max_bh_size
+        max_block_ex_mem
+        max_block_ex_steps
+        max_block_size
+        max_collateral_inputs
+        max_epoch
+        max_tx_ex_mem
+        max_tx_ex_steps
+        max_tx_size
+        max_val_size
+        min_fee_a
+        min_fee_b
+        min_pool_cost
+        min_utxo_value
+        monetary_expand_rate
+        optimal_pool_count
+        pool_deposit
+        price_mem
+        price_step
+        protocol_major
+        protocol_minor
+        treasury_growth_rate
     }
 }
