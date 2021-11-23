@@ -1,0 +1,11 @@
+# Returns total amount of ADA (in lovelaces) that is stake with all pools in an epoch
+
+query Query {
+    epoch_stake_aggregate(where: {epoch_no: {_eq: "303"}}) {
+        aggregate {
+            sum {
+                amount
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+# Returns the latest block with some detail including UTC time when was minted
+
+query Query {
+    block(order_by: {block_no: desc}, where: {block_no: {_is_null: false}}, limit: 1) {
+        block_no
+        epoch_no
+        epoch_slot_no
+        hash
+        id
+        op_cert
+        op_cert_counter
+        previous_id
+        proto_major
+        proto_minor
+        size
+        slot_leader_id
+        slot_no
+        time
+        tx_count
+        vrf_key
+    }
+}
+

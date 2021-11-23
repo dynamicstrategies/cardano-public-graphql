@@ -1,7 +1,9 @@
 # Returns the Treasury Reserve, total fees for every epoch
+# deposits + fees + reserves + rewards + treasury + utxo = 45bn ADA
+# set the epoch_no to the most recent one
 
 query Query {
-    ada_pots {
+    ada_pots(where: {epoch_no: {_eq: 303}}) {
         block_id
         deposits
         epoch_no

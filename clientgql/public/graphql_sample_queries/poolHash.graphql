@@ -1,5 +1,6 @@
 # Gets a list of Pools with their pool_id and their pool hashes that uniquely identifies the pool.
 # You can use this hash to find the pool on adapools.org for example
+
 query Query {
     pool_hash {
         id

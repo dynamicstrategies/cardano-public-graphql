@@ -1,6 +1,6 @@
 # Retrieve the latest epoch's parameters
 
-query GetParams {
+query Query {
     epoch(order_by: {no: desc}, where: {no: {_is_null: false}}, limit: 1) {
         fees
         end_time

@@ -1,0 +1,23 @@
+# Returns the details of a particular block, in this case with id 6514727
+
+query Query {
+    block(where: {block_no: {_eq: 6514727}}) {
+        block_no
+        epoch_no
+        epoch_slot_no
+        hash
+        id
+        op_cert
+        op_cert_counter
+        previous_id
+        proto_major
+        proto_minor
+        size
+        slot_leader_id
+        slot_no
+        time
+        tx_count
+        vrf_key
+    }
+}
+
