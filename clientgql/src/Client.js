@@ -64,11 +64,11 @@ class Client extends Component {
       cache: new InMemoryCache(),
       defaultOptions: {
         watchQuery: {
-          fetchPolicy: 'no-cache',
+          fetchPolicy: 'cache-and-network',
           errorPolicy: 'ignore',
         },
         query: {
-          fetchPolicy: 'no-cache',
+          fetchPolicy: 'cache-first',
           errorPolicy: 'all',
         },
       },
