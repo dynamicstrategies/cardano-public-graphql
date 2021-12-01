@@ -35,12 +35,18 @@ The following use case have been documented in the graphql_sample_queries folder
 - chainTip
 - epochParams
 - epochStats
+- latestBlock
+- metaData
+- oneBlock
 - poolHash
 - poolMetadata
 - poolUpdate_allPools
 - poolUpdate_onePool
 - poolUpdate_oneUpdate
 - stakePoolTickers
+- totalStaked
+- transactionByHash
+- UTXOAtAddress
 
 **Rate Limits** - the API is currently limited to 1 request/second per IP address, with bursts up to 20 requests. This is plenty for individual users and small projects.
 
