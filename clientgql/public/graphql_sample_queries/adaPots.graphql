@@ -3,7 +3,7 @@
 # set the epoch_no to the most recent one
 
 query Query {
-    ada_pots(where: {epoch_no: {_eq: 303}}) {
+    ada_pots {
         block_id
         deposits
         epoch_no

@@ -1,0 +1,11 @@
+# Returns the latest stored metadata for key 247428
+# change the key number for return other metadata
+
+query Query {
+    tx_metadata(limit: 1, where: {key: {_eq: "247428"}}, order_by: {id: desc}) {
+        id
+        key
+        json
+        tx_id
+    }
+}

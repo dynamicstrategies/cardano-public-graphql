@@ -1,0 +1,18 @@
+# Returns transaction details by hash. Important - all hashed start with \\x
+
+query Query {
+    tx(where: {hash: {_eq: "\\x8a91586ea50f233e39a3a238741d7eb3ce8d67395dfa5af73eec37957f8ea35b"}}) {
+        block_id
+        block_index
+        deposit
+        fee
+        hash
+        id
+        invalid_before
+        invalid_hereafter
+        out_sum
+        script_size
+        size
+        valid_contract
+    }
+}
