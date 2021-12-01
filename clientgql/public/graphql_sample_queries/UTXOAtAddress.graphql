@@ -1,7 +1,7 @@
 # Returns the amount of ADA at a certain address
 
 query Query {
-    utxo_view(where: {address: {_eq: "addr1v8knewjk8vvx9yvpsyzfqqgglhjjv9ecx8dttck4lsdlhxc99gxhc"}}) {
+    utxo_view(where: {address: {_eq: "addr1qxh7kl3veaz4xak308s52ju3wkm36ace4srkjqc43rmm70umrw3lhffgv3d0p5cnle0x47xkhlhcc2e8j0ezrqwavkds9h4d2p"}}) {
         address
         address_has_script
         data_hash
